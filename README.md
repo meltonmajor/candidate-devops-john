@@ -39,7 +39,7 @@ Before you begin, make sure you have the following installed:
 ## How to Run
 
 ```bash
-### 1. Clone the repository
+1. Clone the repository
 
 git clone https://github.com/meltonmajor/candidate-devops-john.git
 cd candidate-devops-john
