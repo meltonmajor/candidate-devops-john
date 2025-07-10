@@ -17,28 +17,30 @@ The goal is to simulate a real-world streaming pipeline using open-source techno
 
 ## Components
 
-| Component           | Description                                                                  |
-|---------------------|------------------------------------------------------------------------------|
+| Component           | Description                                                                 |
+|---------------------|-----------------------------------------------------------------------------|
 | `metrics/`          | Gathers system metrics using `psutil` and makes them available to the producer. |
-| `producer/`         | Connects to Kafka and sends JSON-formatted metrics to a topic.               |
-| `consumer/`         | Listens to Kafka, parses metrics, and inserts them into PostgreSQL.          |
-| `docker-compose.yml`| Spins up Kafka, Zookeeper, PostgreSQL, and other services.                   |
+| `producer/`         | Connects to Kafka and sends JSON-formatted metrics to a topic.              |
+| `consumer/`         | Listens to Kafka, parses metrics, and inserts them into PostgreSQL.         |
+| `docker-compose.yml`| Spins up Kafka, Zookeeper, PostgreSQL, and other services.                  |
 
 ---
 
 ## Requirements
 
-Before you begin, ensure you have the following installed:
+Before you begin, make sure you have the following installed:
 
-- Docker
-- Docker Compose
+- [Docker](https://www.docker.com/)
+- [Docker Compose](https://docs.docker.com/compose/)
 - Python 3.10+ (for running producer/consumer scripts locally)
 
 ---
 
 ## How to Run
 
-1. Clone the repository
+### 1. Clone the repository
+
+```bash
 git clone https://github.com/meltonmajor/candidate-devops-john.git
 cd candidate-devops-john
 
@@ -47,15 +49,12 @@ docker compose up --build
 
 3. Start the Producer and Consumer (in separate terminals)
 
-Terminal 1: Producer
+Terminal 1: Start the Producer
 cd producer
 python producer.py
 
-
-Terminal 2: Consumer
+Terminal 2: Start the Consumer
 cd consumer
 python consumer.py
-
-
 
 
