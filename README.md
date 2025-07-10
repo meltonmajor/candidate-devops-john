@@ -38,8 +38,24 @@ Before you begin, ensure you have the following installed:
 
 ## How to Run
 
-### 1. Clone the repository
-
-```bash
+1. Clone the repository
 git clone https://github.com/meltonmajor/candidate-devops-john.git
 cd candidate-devops-john
+
+2. Build and Start the Services
+docker compose up --build
+
+3. Start the Producer and Consumer (in separate terminals)
+
+Terminal 1: Producer
+cd producer
+python producer.py
+
+
+Terminal 2: Consumer
+cd consumer
+python consumer.py
+
+
+
+
