@@ -30,8 +30,8 @@ The goal is to simulate a real-world streaming pipeline using open-source techno
 
 Before you begin, ensure you have the following installed:
 
-- [Docker](https://www.docker.com/)
-- [Docker Compose](https://docs.docker.com/compose/)
+- Docker
+- Docker Compose
 - Python 3.10+ (for running producer/consumer scripts locally)
 
 ---
