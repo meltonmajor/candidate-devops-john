@@ -1,20 +1,45 @@
 # candidate-devops
 
-## Overview
+This project demonstrates a simple DevOps pipeline that collects system-level metrics, sends them through a Kafka pipeline, and stores them in a PostgreSQL database. The entire setup is containerized using Docker Compose, making it easy to spin up and test locally.
 
-This project implements a simple pipeline to collect operating system metrics, publish them to a Kafka topic, and consume those events to store them in a PostgreSQL database. The entire system runs via Docker Compose.
+---
 
-The components are:
-- **Metrics generator**: A Python script that collects basic system metrics like CPU and memory usage.
-- **Kafka producer**: Publishes metrics to a Kafka topic.
-- **Kafka consumer**: Reads from the Kafka topic and inserts the metrics into PostgreSQL.
-- **Docker Compose**: Manages Kafka, Zookeeper, PostgreSQL, and can be extended to run producer/consumer as services.
+## Project Overview
+
+The goal is to simulate a real-world streaming pipeline using open-source technologies. Here's what it does:
+
+- Collects system metrics like CPU and memory usage.
+- Publishes those metrics to a Kafka topic via a producer.
+- Consumes the messages from Kafka and stores them in PostgreSQL.
+- Orchestrates all services using Docker Compose.
+
+---
+
+## Components
+
+| Component           | Description                                                                  |
+|---------------------|------------------------------------------------------------------------------|
+| `metrics/`          | Gathers system metrics using `psutil` and makes them available to the producer. |
+| `producer/`         | Connects to Kafka and sends JSON-formatted metrics to a topic.               |
+| `consumer/`         | Listens to Kafka, parses metrics, and inserts them into PostgreSQL.          |
+| `docker-compose.yml`| Spins up Kafka, Zookeeper, PostgreSQL, and other services.                   |
+
+---
+
+## Requirements
+
+Before you begin, ensure you have the following installed:
+
+- [Docker](https://www.docker.com/)
+- [Docker Compose](https://docs.docker.com/compose/)
+- Python 3.10+ (for running producer/consumer scripts locally)
+
+---
 
 ## How to Run
 
-1. **Clone the repo (or copy the files locally)**
+### 1. Clone the repository
 
-2. **Start the environment**
-   ```bash
-   docker compose up -d
-
+```bash
+git clone https://github.com/meltonmajor/candidate-devops-john.git
+cd candidate-devops-john
